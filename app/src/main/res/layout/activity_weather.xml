@@ -1,0 +1,39 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/design_default_color_primary">
+
+    <ImageView
+        android:id="@+id/bing_pic_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+
+    <!-- ScrollView只允许嵌套一个直接子布局 -->
+    <ScrollView
+        android:id="@+id/weather_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:overScrollMode="never">
+
+        <!-- 在子布局中再引入所有布局 -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/title"/>
+
+            <include layout="@layout/now"/>
+
+            <include layout="@layout/forecast"/>
+
+            <include layout="@layout/aqi"/>
+
+            <include layout="@layout/suggestion"/>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
